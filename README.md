@@ -13,3 +13,10 @@ In order to save any changes made, click the "Save Changes" button. Changes can 
 Note:
 Sheets cannot be updated by the application if they are currently open. Please close the datasheet file before using the "Save Changes" button in the application.
 
+SETUP INSTRUCTIONS:
+
+To setup the application using the example data provided, follow the instructions below:
+- Download and unzip the project
+- from the project folder, go to out/artifacts/TestCaseAnalyzer and double click the "TestCaseAnalyzer.jar" to run the application
+- Once the application has started, click File and select Config, then select the directory where the "TestCaseAnalyzer.jar" file is located.
+- Once the config is set, you can use the following fake test case names to see the application in action: "Example Test Case 1", "Example Test Case 2"
