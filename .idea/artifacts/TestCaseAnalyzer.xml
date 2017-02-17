@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="TestCaseAnalyzer">
+    <output-path>$PROJECT_DIR$/out/artifacts/TestCaseAnalyzer</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.analyzer.main.Main" />
+        <option name="description" value="" />
+        <option name="height" value="800" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Test Case Analyzer" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+        <option name="width" value="1300" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="TestCaseAnalyzer.jar">
+        <element id="module-output" name="TestCaseAnalyzer" />
+        <element id="library" level="project" name="commons-collections4-4.1-javadoc" />
+        <element id="library" level="project" name="poi-3.16-beta2" />
+      </element>
+    </root>
+  </artifact>
+</component>

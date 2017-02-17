@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="TestCaseAnalyzer.jnlp">
+  <information>
+    <title>Test Case Analyzer</title>
+    <vendor>Unknown</vendor>
+    <description>TestCaseAnalyzer</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="TestCaseAnalyzer.jar" size="33063" download="eager" />
+    <jar href="commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="poi-3.16-beta2.jar" size="2619573" download="eager" />
+    <jar href="poi-examples-3.16-beta2.jar" size="369259" download="eager" />
+    <jar href="poi-excelant-3.16-beta2.jar" size="31065" download="eager" />
+    <jar href="poi-ooxml-3.16-beta2.jar" size="1384781" download="eager" />
+    <jar href="poi-ooxml-schemas-3.16-beta2.jar" size="5873588" download="eager" />
+    <jar href="poi-scratchpad-3.16-beta2.jar" size="1367466" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="1300" height="800" main-class="com.analyzer.main.Main"  name="TestCaseAnalyzer" />
+  <update check="background"/>
+</jnlp>

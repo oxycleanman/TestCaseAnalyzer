@@ -1,0 +1,17 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<DialogPane fx:id="configWindow" fx:controller="com.analyzer.main.ConfigWindowController" xmlns:fx="http://javafx.com/fxml">
+    <headerText>
+        Config Menu
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <Label text="GitHub Local Repository Directory" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="directoryInput" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button text="Select" fx:id="changeDirectoryButton" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#openDirectoryChooser"/>
+        </GridPane>
+    </content>
+</DialogPane>

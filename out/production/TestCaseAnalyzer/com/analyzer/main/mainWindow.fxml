@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainWindow" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.analyzer.main.MainWindowController">
+
+    <center>
+        <GridPane alignment="TOP_CENTER" vgap="10">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Test Case Name" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+                <padding>
+                    <Insets top="10" />
+                </padding>
+                <font>
+                   <Font name="Arial Bold" size="14.0" />
+                </font>
+            </Label>
+            <TextArea fx:id="testCaseName" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button fx:id="searchButton" defaultButton="true" onAction="#buttonHandler" text="Search" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            </Button>
+            <Label fx:id="errorMessage" alignment="CENTER" textFill="RED" wrapText="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <font>
+               <Font name="Arial Bold" size="14.0" />
+            </font>
+            </Label>
+            <VBox fx:id="centerDetailPanel" alignment="CENTER" spacing="10" visible="false" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                <padding>
+                    <Insets bottom="10" />
+                </padding>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="VDI running this Test" textAlignment="CENTER">
+                    <padding>
+                        <Insets top="30" />
+                    </padding>
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="vdiName" alignment="CENTER" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="40" />
+                    </padding>
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" text="Data Sheet" textAlignment="CENTER">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="datasheetName" alignment="CENTER" textAlignment="CENTER" GridPane.rowIndex="8">
+
+                </Label>
+                <Label text="Recently Updated Files">
+                    <padding>
+                        <Insets bottom="10" top="20" />
+                    </padding>
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="recentUpdates" VBox.vgrow="ALWAYS" />
+            </VBox>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </center>
+
+    <right>
+
+    </right>
+
+    <left>
+        <VBox fx:id="leftPanel" alignment="CENTER" prefWidth="500" spacing="10" visible="false">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label alignment="CENTER" text="Keywords Used in this Test Case" textAlignment="CENTER">
+            <font>
+               <Font name="Arial Bold" size="14.0" />
+            </font></Label>
+            <ListView fx:id="keywordPanel" editable="true" style="-fx-border-style: none;" VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" spacing="10">
+                <Button fx:id="addNewKeywordButton" onAction="#showKeywordPicker" text="Add New Keyword" />
+                <Button fx:id="deleteKeywordButton" onAction="#buttonHandler" text="Delete Selected Keyword" />
+            </HBox>
+        </VBox>
+    </left>
+
+    <right>
+        <VBox fx:id="rightPanel" alignment="CENTER" prefWidth="500" spacing="10" visible="false">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Data Used in this Test Case" textAlignment="CENTER">
+            <font>
+               <Font name="Arial Bold" size="14.0" />
+            </font></Label>
+            <ListView fx:id="dataPanel" editable="true" style="-fx-border-style: none;" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </right>
+
+    <top>
+        <HBox>
+            <MenuBar HBox.hgrow="ALWAYS">
+                <Menu text="File">
+                    <MenuItem fx:id="configMenuItem" onAction="#showConfigDialog" text="Config" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="exitMenuItem" onAction="#handleExitMenuItemClick" text="Exit" />
+                </Menu>
+            </MenuBar>
+        </HBox>
+    </top>
+
+    <bottom>
+        <GridPane alignment="CENTER">
+            <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                <padding>
+                    <Insets left="10" />
+                </padding>
+                <ProgressBar fx:id="loadingBar" prefWidth="500.0" progress="0.0" GridPane.hgrow="ALWAYS" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox fx:id="bottomPanel" alignment="CENTER_RIGHT" spacing="20" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <padding>
+                    <Insets bottom="10" right="20" top="10" />
+                </padding>
+                <Button fx:id="revertChangesButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#buttonHandler" text="Revert Changes" textAlignment="CENTER">
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font></Button>
+                <Button fx:id="saveChangesToDataButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonHandler" text="Save Changes" textAlignment="CENTER">
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font>
+                </Button>
+            </HBox>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+    </bottom>
+</BorderPane>
